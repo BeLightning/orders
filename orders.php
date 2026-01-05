@@ -3,7 +3,7 @@
  * Plugin Name: WooCommerce Формуляр за запитване
  * Description: Замяна на бутона "Добави в количката" с формуляр за запитване за ВСИЧКИ продукти
  * Version: 1.0.1
- * Author: Ivelina
+ * Author: Ivelina I.
  * Text Domain: wc-inquiry-form
  * License: MIT
  * Author URI: https://github.com/BeLightning
