@@ -6,6 +6,8 @@
  * Author: Ivelina
  * Text Domain: wc-inquiry-form
  * License: MIT
+ * Author URI: https://github.com/BeLightning
+ * License URI: https://opensource.org/licenses/MIT
  * Requires PHP: 8.2
  * WooCommerce tested up to: 10.4
  */
