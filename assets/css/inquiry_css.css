@@ -1,0 +1,322 @@
+.wc-inquiry-form-wrapper {
+    margin: 30px 0;
+    padding: 0 15px;
+}
+
+.wc-inquiry-form {
+    max-width: 650px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.wc-inquiry-form::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.wc-inquiry-form-fields {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.wc-inquiry-form .form-row {
+    margin-bottom: 25px;
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.wc-inquiry-form .form-row:nth-child(1) { animation-delay: 0.1s; }
+.wc-inquiry-form .form-row:nth-child(2) { animation-delay: 0.2s; }
+.wc-inquiry-form .form-row:nth-child(3) { animation-delay: 0.3s; }
+.wc-inquiry-form .form-row:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.wc-inquiry-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    transition: color 0.3s ease;
+}
+
+.wc-inquiry-form .required {
+    color: #f56565;
+    margin-left: 3px;
+}
+
+.wc-inquiry-form input[type="text"],
+.wc-inquiry-form input[type="email"],
+.wc-inquiry-form input[type="tel"],
+.wc-inquiry-form input[type="number"] {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 15px;
+    background: #ffffff;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.wc-inquiry-form input:hover {
+    border-color: #cbd5e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.wc-inquiry-form input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15), 0 4px 12px rgba(102, 126, 234, 0.2);
+    transform: translateY(-2px);
+}
+
+.wc-inquiry-form small {
+    display: block;
+    margin-top: 6px;
+    color: #718096;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.wc-inquiry-form-messages {
+    margin: 20px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.wc-inquiry-form-messages .message {
+    padding: 16px 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    animation: slideIn 0.4s ease;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.wc-inquiry-form-messages .message::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.wc-inquiry-form-messages .success {
+    background: linear-gradient(135deg, #81e6d9 0%, #48bb78 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(72, 187, 120, 0.3);
+}
+
+.wc-inquiry-form-messages .success::before {
+    content: '✓';
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wc-inquiry-form-messages .error {
+    background: linear-gradient(135deg, #fc8181 0%, #f56565 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(245, 101, 101, 0.3);
+}
+
+.wc-inquiry-form-messages .error::before {
+    content: '✕';
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wc-inquiry-form-messages .processing {
+    background: linear-gradient(135deg, #90cdf4 0%, #4299e1 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(66, 153, 225, 0.3);
+}
+
+.wc-inquiry-form-messages .processing::before {
+    content: '⟳';
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.wc-inquiry-form button[type="submit"] {
+    width: 100%;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
+    color: #667eea;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+}
+
+.wc-inquiry-form button[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.wc-inquiry-form button[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+}
+
+.wc-inquiry-form button[type="submit"]:hover::before {
+    left: 100%;
+}
+
+.wc-inquiry-form button[type="submit"]:active {
+    transform: translateY(-1px);
+}
+
+.wc-inquiry-form button[type="submit"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.wc-inquiry-form-wrapper .variations_form {
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.wc-inquiry-form-wrapper .variations_form .variations {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.wc-inquiry-form-wrapper .variations_form .variations td {
+    padding: 12px 0;
+}
+
+.wc-inquiry-form-wrapper .variations_form .variations label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #2d3748;
+}
+
+.wc-inquiry-form-wrapper .variations_form select {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    background: #ffffff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    padding-right: 45px;
+}
+
+.wc-inquiry-form-wrapper .variations_form select:hover {
+    border-color: #cbd5e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.wc-inquiry-form-wrapper .variations_form select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+}
+
+@media (max-width: 768px) {
+    .wc-inquiry-form {
+        max-width: 100%;
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+    
+    .wc-inquiry-form-fields {
+        padding: 20px;
+    }
+    
+    .wc-inquiry-form button[type="submit"] {
+        padding: 14px 24px;
+        font-size: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wc-inquiry-form::before,
+    .wc-inquiry-form .form-row,
+    .wc-inquiry-form input,
+    .wc-inquiry-form button[type="submit"],
+    .wc-inquiry-form-messages .message {
+        animation: none;
+        transition: none;
+    }
+}
